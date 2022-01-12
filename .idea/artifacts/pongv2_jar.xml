@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="pongv2:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/pongv2_jar</output-path>
+    <root id="archive" name="pongv2.jar">
+      <element id="module-output" name="pongv2" />
+    </root>
+  </artifact>
+</component>
