@@ -45,7 +45,7 @@ public class MenuPanel extends JPanel implements ActionListener {
         exitButton.addActionListener(e -> System.exit(0));
         this.add(exitButton);
 
-        String[] colors = {"WHITE","CYAN","YELLOW","GREEN","RED"};
+        String[] colors = {"WHITE","CYAN","YELLOW","GREEN","RED","PINK"};
         JComboBox chooseP1color = new JComboBox(colors);
         chooseP1color.setBounds(this.SCREEN_WIDTH/2-210,this.SCREEN_HEIGHT-215,200,50);
         chooseP1color.setBackground(Color.green);
