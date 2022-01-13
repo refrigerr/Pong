@@ -32,15 +32,15 @@ public class Ball extends Rectangle {
         if(timesBounced<5) this.x+=xVelocity;
         else if(timesBounced<10) {
             this.x+=2*xVelocity;
-            setMaxYSpeed(3);
+            setMaxYSpeed(5);
         }
         else if(timesBounced<15) {
             this.x+=3*xVelocity;
-            setMaxYSpeed(4);
+            setMaxYSpeed(10);
         }
         else {
             this.x+=4*xVelocity;
-            setMaxYSpeed(5);
+            setMaxYSpeed(15);
         }
         this.y+=yVelocity;
     }

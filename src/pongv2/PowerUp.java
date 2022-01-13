@@ -13,7 +13,7 @@ public class PowerUp extends Rectangle {
         this.id=random.nextInt(11);
     }
     public void doPowerUp(Paddle paddle,Ball ball){
-        if(id<5&&paddle.height<300) paddle.height+=50;
+        if(id<5&&paddle.height<300) paddle.height+=30;
         else if(id<10) paddle.setMaxSpeed(paddle.getMaxSpeed()+2);
         else{
             ball.width=40;

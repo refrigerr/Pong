@@ -118,14 +118,19 @@ public class GamePanel extends JPanel implements ActionListener {
         powerUpOnBoard=false;
     }
     public void checkCollisions() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-        if(ball.y<0 || (ball.y>SCREEN_HEIGHT-ball.height) ) {
+        if(ball.y<0) {
             ball.setyVelocity(-ball.getyVelocity());
+            ball.y=0;
             //plays sound when ball hits wall
             //playSoundEffect("ball_hit_wall.wav");
         }
-        if(ball.y>SCREEN_HEIGHT-ball.height+2) ball.y=SCREEN_HEIGHT-ball.height;
+        if(ball.y>SCREEN_HEIGHT-ball.height){
+            ball.setyVelocity(-ball.getyVelocity());
+            ball.y=SCREEN_HEIGHT-ball.height;
+        }
         if(ball.intersects(paddle1))
         {
+            ball.x=paddle1.width;
             if(ball.y+ball.height/2>paddle1.y+(paddle1.height/3)&&(ball.y+ball.height/2<paddle1.y+2*paddle1.height/3)){
                 if(ball.getyVelocity()>1) ball.setyVelocity(ball.getyVelocity()-1);
                 else if (ball.getyVelocity()<-1) ball.setyVelocity(ball.getyVelocity()+1);
@@ -144,6 +149,7 @@ public class GamePanel extends JPanel implements ActionListener {
             //playSoundEffect("ball_hit_paddle.wav");
         }
         if(ball.intersects(paddle2)){
+            ball.x=SCREEN_WIDTH-paddle2.width-ball.width;
             if(ball.y+ball.height/2>paddle2.y+(paddle2.height/3)&&(ball.y+ball.height/2<paddle2.y+2*paddle2.height/3)){
                 if(ball.getyVelocity()>1) ball.setyVelocity(ball.getyVelocity()-1);
                 else if (ball.getyVelocity()<-1) ball.setyVelocity(ball.getyVelocity()+1);
