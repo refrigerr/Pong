@@ -55,7 +55,7 @@ public class GamePanel extends JPanel implements ActionListener {
         paddle2 = new Paddle(SCREEN_WIDTH-15,SCREEN_HEIGHT/2-25,15,70,2);
     }
     public void newBall(){
-        ball = new Ball(random.nextInt(50)+SCREEN_WIDTH/2-25,random.nextInt(50)+SCREEN_HEIGHT/2-25,20,20);
+        ball = new Ball(random.nextInt(50)+SCREEN_WIDTH/2-25,random.nextInt(50)+SCREEN_HEIGHT/2-25,20,20,this);
     }
     public void newPowerUp() {
         powerUp = new PowerUp(random.nextInt(SCREEN_WIDTH-100)+50,random.nextInt(SCREEN_HEIGHT-100)+50,40,40);
@@ -113,6 +113,7 @@ public class GamePanel extends JPanel implements ActionListener {
         ball.height=20;
         ball.timesBounced=0;
         ball.setMaxYSpeed(2);
+        ball.poweredUp=false;
         bouncedAfterPowerUp=0;
         if(powerUpOnBoard) powerUp.setLocation(SCREEN_WIDTH+100,SCREEN_HEIGHT+100);
         powerUpOnBoard=false;

@@ -16,8 +16,9 @@ public class PowerUp extends Rectangle {
         if(id<5&&paddle.height<300) paddle.height+=30;
         else if(id<10) paddle.setMaxSpeed(paddle.getMaxSpeed()+2);
         else{
-            ball.width=40;
-            ball.height=40;
+            ball.width=ball.icon.getIconWidth();
+            ball.height=ball.icon.getIconHeight();
+            ball.poweredUp=true;
         }
 
     }

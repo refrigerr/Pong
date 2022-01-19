@@ -1,16 +1,22 @@
 package pongv2;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
 public class Ball extends Rectangle {
+    private GamePanel gamePanel;
     private int xVelocity;
     private int yVelocity;
     private int maxYSpeed;
     int timesBounced;
     private Random random;
-    public Ball(int x, int y, int width, int height){
+    boolean poweredUp = false;
+    ImageIcon icon = new ImageIcon("glowa_papieza.png");
+
+    public Ball(int x, int y, int width, int height, GamePanel gp){
         super(x,y,width,height);
+        this.gamePanel=gp;
         random = new Random();
         xVelocity = 3;
         yVelocity = 2;
@@ -46,9 +52,12 @@ public class Ball extends Rectangle {
     }
     public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(Color.white);
-        if(timesBounced>=10) g2d.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
-        g2d.fillOval(x, y,width,height);
+        if(!poweredUp){
+            g2d.setColor(Color.white);
+            if(timesBounced>=10) g2d.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
+            g2d.fillOval(x, y,width,height);
+        }else icon.paintIcon(gamePanel,g,x,y);
+
     }
 
     public int getxVelocity() {
