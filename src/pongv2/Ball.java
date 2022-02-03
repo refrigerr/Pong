@@ -10,9 +10,8 @@ public class Ball extends Rectangle {
     private int yVelocity;
     private int maxYSpeed;
     int timesBounced;
-    private Random random;
+    private final Random random;
     boolean poweredUp = false;
-    ImageIcon icon = new ImageIcon("glowa_papieza.png");
 
     public Ball(int x, int y, int width, int height, GamePanel gp){
         super(x,y,width,height);
@@ -52,11 +51,10 @@ public class Ball extends Rectangle {
     }
     public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        if(!poweredUp){
-            g2d.setColor(Color.white);
-            if(timesBounced>=10) g2d.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
-            g2d.fillOval(x, y,width,height);
-        }else icon.paintIcon(gamePanel,g,x,y);
+        g2d.setColor(Color.white);
+        if(timesBounced>=10) g2d.setColor(new Color(random.nextInt(255),random.nextInt(255),random.nextInt(255)));
+        g2d.fillOval(x, y,width,height);
+
 
     }
 

@@ -236,16 +236,6 @@ public class GamePanel extends JPanel implements ActionListener {
     }
     public class MyActionListener extends KeyAdapter {
         public void keyPressed(KeyEvent e) {
-            /*if(e.getKeyCode()==KeyEvent.VK_ESCAPE&&!paused){
-                paused=true;
-                repaint();
-                timer.stop();
-
-            }else if(e.getKeyCode()==KeyEvent.VK_ESCAPE&&paused){
-                paused=false;
-                timer.start();
-            }
-            */
             paddle1.keyPressed(e);
             paddle2.keyPressed(e);
 

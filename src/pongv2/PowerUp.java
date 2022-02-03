@@ -16,11 +16,10 @@ public class PowerUp extends Rectangle {
         if(id<5&&paddle.height<300) paddle.height+=30;
         else if(id<10) paddle.setMaxSpeed(paddle.getMaxSpeed()+2);
         else{
-            ball.width=ball.icon.getIconWidth();
-            ball.height=ball.icon.getIconHeight();
+            ball.width=40;
+            ball.height=40;
             ball.poweredUp=true;
         }
-
     }
     public void draw(Graphics g) {
         if(id<5) g.setColor(Color.GREEN);
@@ -28,5 +27,4 @@ public class PowerUp extends Rectangle {
         else g.setColor(Color.RED);
         g.fillRect(x, y,width,height);
     }
-
 }
