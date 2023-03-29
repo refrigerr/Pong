@@ -70,4 +70,6 @@ public class Paddle extends Rectangle {
     public void setColor(Color color) {
         this.color = color;
     }
+
+
 }
